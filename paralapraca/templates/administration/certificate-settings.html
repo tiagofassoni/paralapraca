@@ -76,22 +76,23 @@ ng-app="certification"
                     </div>
                     <footer>{{ object.course_student.user.get_full_name }}
                       <div class="credits-section">
+                          <p><b>Emitido em:</b> xx/xx/xx</p>
                           <p><b>Realizado em:</b> {{ site.domain }}</p>
                           <p><b>URL de validação:</b> <a href="">{{ site.domain }}/(código)</a></p>
                       </div>
                       <div class="coordinator-section">
+                          {% verbatim %}
+                          <div class="signature-coordinator">
+                              <img id="sig-logo" alt="Assinatura" preview-image ng-model="images.signature" ng-src="{{ ct.signature_url }}" class="img-responsive" />
+                              <file ng-model="images.signature" name="logo"></file>
+                          </div>
+                          {% endverbatim %}
                           <div class="editable editable-text name-coordinator">
                               <input type="text" ng-model="ct.name" placeholder="Digite o nome" />
                           </div>
                           <div class="editable editable-text role-coordinator">
                               <input type="text" ng-model="ct.role" placeholder="Digite o cargo" />
                           </div>
-                          {% verbatim %}
-                          <div class="certificate-logos institute-logo">
-                              <file ng-model="images.signature" name="logo"></file>
-                              <img id="sig-logo" alt="Assinatura" preview-image ng-model="images.signature" ng-src="{{ ct.signature_url }}" class="img-responsive" />
-                          </div>
-                          {% endverbatim %}
                       </div>
                     </footer>
                 </div>
@@ -105,6 +106,7 @@ ng-app="certification"
                 <div class="certificate-container certificate-admin receipt-admin receipt">
                   <div class="certificate-logos">
                       <img src="/static/img/logo-avante.png" alt="AVANTE" class="avante">
+                      <img src="/static/img/site-logo-orange.svg" alt="{{ site.name }}" class="paralapraca">
                       <div class="institute-logo">
                         {% verbatim %}
                           <img id="base-logo" alt="Logo Instituto" preview-image ng-model="images.base_logo" ng-src="{{ ct.base_logo_url }}" class="img-responsive" />
@@ -133,7 +135,7 @@ ng-app="certification"
                             <input type="text" ng-model="ct.role" placeholder="Digite o cargo">
                           </p>
                           {% verbatim %}
-                          <div class="">
+                          <div class="signature-coordinator">
                               <img id="sig-logo" alt="Assinatura" preview-image ng-model="images.signature" ng-src="{{ ct.signature_url }}" class="img-responsive" />
                               <file ng-model="images.signature" name="logo"></file>
                           </div>

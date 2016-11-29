@@ -21,7 +21,7 @@
         font-family: $font-family-serif;
         font-size: 64px;
         line-height: 64px;
-        margin: 20px 0;
+        margin: 10px 0;
         text-align: center;
         text-transform: uppercase;
     }
@@ -32,18 +32,26 @@
             font-size: 22px;
             font-weight: $bold;
         }
+        p {
+            margin-bottom: 5px;
+        }
     }
     .credits-section {
         float: left;
+        margin-top: 55px;
     }
     .coordinator-section {
         float: right;
-        width: 200px;
+        margin-top: 20px; 
+        width: 180px;
+        p {
+            margin-bottom: 5px;
+        }
     }
     footer {
         font-size: $font-size-small;
         overflow: hidden;
-        padding: 20px;
+        padding: 0 20px;
     }
     &.receipt {
         background-image: url('../img/bg-receipt.svg');
@@ -67,20 +75,19 @@
 }
 .certificate-admin {
     counter-reset: steps-counter;
-    .institute-logo {
+    .institute-logo, .signature-coordinator {
         max-width: 150px;
         input {
+            font-size: 14px;
             width: 120px;
         }
-    }
-    .certificate-info {
-
     }
     .text-muted, .student {
         cursor: not-allowed;
     }
     .institute,
     .institute-logo,
+    .signature-coordinator,
     .name-coordinator,
     .role-coordinator {
         &:before {
@@ -111,10 +118,18 @@
     }
     .institute,
     .institute-logo,
+    .signature-coordinator,
     .name-coordinator,
     .role-coordinator,
     .institute {
         counter-increment: steps-counter;
         position: relative;
+    }
+    .editable-text {
+        margin-bottom: 5px;
+    }
+    .coordinator-section {
+        margin-top: 0; 
+        width: 160px;
     }
 }
